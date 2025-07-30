@@ -1,0 +1,14 @@
+@model List<Faculty>
+
+<h2>Select Faculty Preferences</h2>
+
+<form asp-action="Submit" method="post">
+    @foreach (var f in Model)
+    {
+        <div>
+            <input type="checkbox" name="selectedFaculties" value="@f.Id" />
+            @f.Name (@f.Department)
+        </div>
+    }
+    <button type="submit">Submit</button>
+</form>
